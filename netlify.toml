@@ -1,0 +1,15 @@
+[build]
+  base = "Portfolio-Builder"
+  command = "pnpm install && pnpm --filter @workspace/portfolio build"
+  publish = "artifacts/portfolio/dist/public"
+
+[build.environment]
+  NODE_VERSION = "22"
+  PNPM_VERSION = "9"
+  PORT = "3000"
+  BASE_PATH = "/"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
